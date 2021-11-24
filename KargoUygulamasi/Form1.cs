@@ -21,17 +21,19 @@ namespace KargoUygulamasi
         private void timer1_Tick(object sender, EventArgs e)
         {
             sayac++;
-            label4.Left += 3;
-            if (label4.Left == 258)
+            label4.Left += 1;
+            if (label4.Left==287)
             {
                 listBox1.Items.Add("Kargo Transever Şubesine girdi" + sayac);
                 listBox1.Items.Add("Kargo Dağıtıma Çıktı" + sayac);
 
 
             }
-          else  if (label4.Left >= 554)
+           
+          else  if (label4.Left == 512)
             {
                 listBox1.Items.Add("Kargo Teslim Edildi" + sayac);
+               
                 timer1.Stop();
             }
 
@@ -39,6 +41,9 @@ namespace KargoUygulamasi
 
         private void button1_Click(object sender, EventArgs e)
         {
+            sayac = 0;
+            label4.Location = new Point(75, 82);
+            listBox1.Items.Clear();
             listBox1.Items.Add("Kargo Şubeden çıktı" + sayac);
 
             timer1.Start();
